@@ -1,3 +1,9 @@
+import { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './Layout/Layout.jsx';
+
+
+
 export const App = () => {
   return (
     <div
