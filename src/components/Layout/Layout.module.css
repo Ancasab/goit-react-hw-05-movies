@@ -16,7 +16,8 @@
 }
 
 .layoutLink.active {
-    color: red;
+    color: brown;
+    
 }
 
 .layoutLink:hover {
@@ -24,27 +25,5 @@
 }
 
 
-/* .layoutHeader {
-list-style: none;
-display: flex;
-margin: 0;
-padding: 10px;
-border-bottom: 1px lightslategray solid;
-box-shadow: 0px 0px 3px 1px lightslategray;
-}
 
-.layoutLink {
-padding: 10px;
-color: black;
-text-decoration: none;
-font-weight: bold;
-font-size: 18px;
-    
-&.active {
-    color: brown;
-}
-
-&:hover {
-    text-decoration: underline;
-}} */
     
