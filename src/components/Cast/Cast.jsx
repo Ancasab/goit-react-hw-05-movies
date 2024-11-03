@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from 'services/api';
 import css from './Cast.module.css';
-import MovieListItem from 'components/MovieListItem/MovieListItem';
+
 
 
 const Cast = () => {
@@ -27,7 +27,7 @@ const Cast = () => {
                 return (
                     <li key={index}>
                         {profile_path && (
-                            <img src={`https://image.tmdb.org/t/p/w500${profile_path}`} alt={name} />
+                            <img className={css.img } src={`https://image.tmdb.org/t/p/w500${profile_path}`} alt={name} />
                         )}
                         <p>{name}</p>
                         <p>{`Character: ${character}`}</p>

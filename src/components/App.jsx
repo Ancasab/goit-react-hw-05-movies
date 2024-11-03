@@ -4,38 +4,73 @@ import { Layout } from './Layout/Layout';
 import Cast from './Cast/Cast';
 import Review from './Review/Review';
 
-
 const HomePage = lazy(() =>
-  import('../pages/HomePage/HomePage')
+  import('../pages/HomePage/HomePage' /* webpackChunkName: "HomePage" */)
 );
 
 const MoviesPage = lazy(() =>
-  import('../pages/MoviesPage/MoviesPage')
+  import('../pages/MoviesPage/MoviesPage' /* webpackChunkName: "MoviesPage" */)
 );
 
 const MovieDetailsPage = lazy(() =>
-  import('../pages/MovieDetailsPage/MovieDetailsPage')
+  import('../pages/MovieDetailsPage/MovieDetailsPage' /* webpackChunkName: "MovieDetailsPage" */)
 );
 
-
-
-
-const App = () => {
+export const App = () => {
   return (
-    <Suspense fallback="" >
-     <Routes>
-        <Route path='/goit-react-hw-05-movies/' element={<Layout />}>
+    <Suspense fallback="">
+      <Routes>
+        <Route path="/goit-react-hw-05-movies/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/goit-react-hw-05-movies/movies" element={<MoviesPage />} />
-          <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetailsPage />}>
+          <Route
+            path="/goit-react-hw-05-movies/movies"
+            element={<MoviesPage />}
+          />
+          <Route
+            path="/goit-react-hw-05-movies/movies/:movieId"
+            element={<MovieDetailsPage />}
+          >
             <Route path="cast" element={<Cast />} />
-            <Route path="review" element={<Review/> } />
+            <Route path="reviews" element={<Review />} />
           </Route>
         </Route>
-     </Routes>
+      </Routes>
     </Suspense>
+  );
+};
+
+
+// const HomePage = lazy(() =>
+//   import('../pages/HomePage/HomePage')
+// );
+
+// const MoviesPage = lazy(() =>
+//   import('../pages/MoviesPage/MoviesPage')
+// );
+
+// const MovieDetailsPage = lazy(() =>
+//   import('../pages/MovieDetailsPage/MovieDetailsPage')
+// );
+
+
+
+
+// const App = () => {
+//   return (
+//     <Suspense fallback="" >
+//      <Routes>
+//         <Route path='/goit-react-hw-05-movies/' element={<Layout />}>
+//           <Route index element={<HomePage />} />
+//           <Route path="/goit-react-hw-05-movies/movies" element={<MoviesPage />} />
+//           <Route path="/goit-react-hw-05-movies/movies/:movieId" element={<MovieDetailsPage />}>
+//             <Route path="cast" element={<Cast />} />
+//             <Route path="review" element={<Review/> } />
+//           </Route>
+//         </Route>
+//      </Routes>
+//     </Suspense>
     
-  )
-}
+//   )
+// }
 
 export default App
