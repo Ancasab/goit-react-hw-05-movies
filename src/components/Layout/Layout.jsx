@@ -6,7 +6,7 @@ import css from './Layout.module.css'
 
 export const Layout = () => {
   return (
-    <div>
+    <>
       <header className={css.layoutHeader}>
         <nav>
           <NavLink 
@@ -24,7 +24,7 @@ export const Layout = () => {
         </nav>
       </header>
       <Outlet />
-    </div>
+    </>
   );
 };
 
